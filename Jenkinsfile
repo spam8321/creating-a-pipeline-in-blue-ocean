@@ -13,9 +13,6 @@ pipeline {
       }
     }
     stage('Test') {
-      environment {
-        CI = 'true'
-      }
       steps {
         sh './jenkins/scripts/test.sh'
       }
@@ -28,5 +25,8 @@ pipeline {
         echo 'This is a test message step!'
       }
     }
+  }
+  environment {
+    CI = 'true'
   }
 }
